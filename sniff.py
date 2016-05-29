@@ -28,7 +28,8 @@ class Sniffer():
 	
 
     def __init__(self):
-    	shutil.rmtree("tmp")
+        if os.path.exists("tmp"):
+    	   shutil.rmtree("tmp")
     	
         self.iface = ""
         self.filter = ""
